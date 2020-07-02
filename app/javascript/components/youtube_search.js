@@ -1,6 +1,8 @@
 require('dotenv').config()
+import { generateList } from './generate_list';
 
 const searchForm = document.querySelector("form")
+const resultContainer = document.querySelector(".result-container")
 
 const youtubeSearch = () => {
   searchForm.addEventListener("submit",(event) => {
@@ -9,10 +11,20 @@ const youtubeSearch = () => {
                               document.getElementById('instrument').value];
     const key = process.env.API_KEY;
     const query = `${searchParameters[0]} tuto for ${searchParameters[1]}`
+    resultContainer.innerHTML = "";
     fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&key=${key}&type=video&q=${query}`)
       .then(response => response.json())
       .then((data) => {
-      console.log(data);
+        // const thumbnailLink, title, description, date
+        console.log(data.items);
+        data.items.forEach (item => {
+          const thumbnailLink = item.snippet.thumbnails.high.url;
+          const title = item.snippet.title;
+          const description = item.snippet.description;
+          const date = item.snippet.publishedAt;
+          const id = item.id.videoId;
+          resultContainer.insertAdjacentHTML("beforeend", generateList(thumbnailLink, title, description, date, id));
+        })
       });
   });
 
