@@ -1,0 +1,41 @@
+.result-container {
+  display:flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.result-card {
+  border: 1px solid $secondary;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin: 5px 0px;
+}
+
+.thumbnail img {
+  width: 200px;
+  height: 150px;
+}
+
+.card-details {
+  margin: 0px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 150px;
+}
+
+.card-details-title {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.card-details-date {
+  color: $light-text;
+}
+
+.interactions .far {
+  font-size: 2rem;
+  margin-right: 10px;
+}
