@@ -6,7 +6,7 @@ class TutosController < ApplicationController
       render json: { success: true }
       tuto.liked_by current_user
     else
-      render json: { success: false, errors: restaurant.errors.messages }, status: :unprocessable_entity
+      render json: { success: false, errors: tuto.errors.messages }, status: :unprocessable_entity
     end
 
   end
