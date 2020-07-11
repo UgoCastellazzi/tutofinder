@@ -1,6 +1,6 @@
 const generateList = (thumbnailLink, title, description, date, id) => {
   return `
-  <div class="result-card">
+  <div class="result-card" id="${id}">
     <div class="thumbnail">
       <img src="${thumbnailLink}" alt="">
     </div>

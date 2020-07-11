@@ -34,6 +34,8 @@ gem 'simple_form'
 
 gem 'devise'
 
+gem 'acts_as_votable'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
