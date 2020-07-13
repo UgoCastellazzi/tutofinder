@@ -2,7 +2,7 @@ require('dotenv').config()
 import { generateList } from './generate_list';
 import { saveTuto } from './save_tuto';
 
-const searchForm = document.querySelector("form")
+const searchForm = document.getElementById("search-form")
 const resultContainer = document.querySelector(".result-container")
 
 const youtubeSearch = () => {
