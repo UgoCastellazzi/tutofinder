@@ -1,0 +1,36 @@
+// Specific CSS for your home-page
+.form-inputs {
+    .home-container {
+        display: flex;
+        justify-content: center;
+        align-items: left;
+        flex-direction: column;
+        padding: 50px;
+      }
+      
+      .search-container {
+        display: flex;
+        width: 90%;
+        text-align: center;
+        justify-content: center;
+      }
+      
+      label,
+      input,
+      select {
+        font-size: 1rem;
+      }
+      
+      label {
+        margin-right: 1rem;
+      }
+      
+      input {
+        border: none;
+      }
+      
+      select {
+        border: none;
+      }
+}
+  
