@@ -1,0 +1,19 @@
+<div class="home-container">
+  <% @tutos.each do | tuto | %>
+    <div class="result-card" id="<%= tuto.id %>">
+      <div class="thumbnail">
+        <img src="<%= tuto.snippet_url %>" alt="">
+      </div>
+      <div class="card-details">
+        <a href="https://www.youtube.com/watch?v=<%= tuto.id %>">
+          <p class="card-details-title"><%= tuto.title %></p>
+        </a>
+        <p class="card-details-description">${description}</p>
+        <p class="card-details-date">Published on the <%= tuto.publish_date %></p>
+      </div>
+      <div class="interactions">
+        <i class="far fa-heart"></i>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -8,7 +8,14 @@ class TutosController < ApplicationController
     else
       render json: { success: false, errors: tuto.errors.messages }, status: :unprocessable_entity
     end
+  end
 
+  def index
+    tutos_liked = current_user.votes
+    @tutos = []
+    tutos_liked.each do | tuto |
+      @tutos << Tuto.find(tuto.votable_id)
+    end
   end
 
   private
